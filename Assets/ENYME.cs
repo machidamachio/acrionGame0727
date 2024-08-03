@@ -22,12 +22,15 @@ public class ENYME : MonoBehaviour
         if (dis <= 3)
         {
              anim.SetBool("Attack",true);
+             anim.SetBool("Running",false);
         }
         else
         {
             anim.SetBool("Attack",false);
+            anim.SetBool("Running",true);
         }
         
+         transform.LookAt(targetObject.transform);
     }
 
     private void FixedUpdate()
@@ -37,4 +40,6 @@ public class ENYME : MonoBehaviour
         float vz = dir.z * speed;
         this.transform.Translate(vx / 50, 0,  vz / 50);
     }
+
+    
 }
